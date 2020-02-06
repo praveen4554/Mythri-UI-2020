@@ -1,0 +1,30 @@
+.grid-item {
+    font-size: 20px;
+    border: 1px solid red;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    display: -ms-grid;
+    grid-template-columns: 10% 30% 50%;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+.grid-row-item{
+     font-size: 20px;
+    border: 1px solid red;
+    text-align: center;
+}
+
+.grid-row-container {
+    display: grid;
+    grid-template-rows: 10% 90%;
+    grid-row-gap: 10px;
+}
+div:nth-of-type(1) {
+    -ms-grid-column: 1/3;
+}
+div:nth-of-type(2) {
+    -ms-grid-column: 1/3;
+}

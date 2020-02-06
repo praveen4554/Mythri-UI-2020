@@ -1,0 +1,13 @@
+div {
+    color: green;
+}
+ #first {
+     color: #cddc39;
+ }
+.first {
+    color: yellow !important;
+}
+
+#first {
+    color: red;
+}
