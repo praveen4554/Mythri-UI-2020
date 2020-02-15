@@ -2,7 +2,7 @@
 <html>
     <head>
         <script>
-        alert('test');
+       // alert('test');
           document.write('first javascript class');
           console.log(document); //
           /**
@@ -11,6 +11,9 @@
           */
           var a=10;
           var b= 'praveen';
+
+          console.log(document.getElementsByClassName("divClass"));
+          console.log(document.getElementById("myFirstDiv"));
          // a="test";
         //   while 
         //   do
@@ -39,7 +42,56 @@
         <script></script>
     </head>
     <body>
+   <div id="myFirstDiv" class="divClass"></div>
+   <div class="divClass"></div>
+   <!--<div onClick = "eventBubbling()" style="margin-left: 5px;margin-top: 10px;border:1px solid; width: 400px; height: 800px;">
+       <div onClick = "eventBubbling()" style="margin-left: 5px;margin-top: 10px;border:1px solid; width: 200px; height: 400px;">
+           <div onClick = "eventBubbling()" style="margin-left: 5px;margin-top: 10px;border:1px solid; width: 100px; height: 200px;">
 
+           </div>
+       </div>
+   </div>-->
+   <a href="http://es6-features.org/#Constants" onClick = "eventBubbling()">test</a>
+   <script>
+        var ele = document.getElementById("myFirstDiv");
+          console.log(document.getElementsByClassName("divClass"));
+          console.log(document.getElementById("myFirstDiv"));
+          ele.innerHTML = "Hello World";
+          console.log(document.getElementById("myFirstDiv").innerText);
+          ele.style.color = "red";
+          var content = document.createElement("span");
+          content.innerText = "praveen";
+          ele.appendChild(content);
+          ele.addEventListener("click",function(){
+              event.preventDefault();
+              alert('test element');
+          },false);
+          /**
+            event bubbling and event capturing 
+            its propgates the events from bottom to top 
+            propgates the event from the top to buttom  event capturing
+          */
+          var a= [1,2,3,4,5];
+          function eventBubbling() {
+            // event.stopPropagation();
+              event.preventDefault();
+            // console.log(event);
+            //   alert('test');
+            for(var i=0;i<a.length;i++){
+
+            }
+            console.log(i); // 5
+          }
+            console.log(i); // not defined
+            /**
+            xml - extended markup language
+            <firstName>praveen</firstName>
+            {
+                firstName: 'praveen'
+            }
+            var a = [{firstName: 'praveen', lastName:'Kumar'},{firstName: 'praveen', lastName:'Kumar'}];
+            */
+   </script>
     </body>
 </html>
 
