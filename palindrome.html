@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+
+<html >
+<head>
+    <script>
+        alert('test');
+      document.write('first javascript');
+        console.log(document);
+           </script>
+    <script src="./myfirstjs.js"> </script>
+    
+</head>
+<body>
+    <p id="sorting"></p>
+        <p> Input Value: <input type="text" id="text"> </p>
+    <input type="submit" value="check" onclick="isPalindrome()">
+        <script>
+        function isPalindrome() {
+	    revString = "";
+            inpval = document.getElementById("text").value;
+	    inpval = inpval.toLowerCase();
+	    inpval = inpval.replace(/\W/g, '');
+            i = inpval.length;
+            for (j = i; j >= 0; j--) {
+                revString = revString + inpval.charAt(j);
+                }
+            if (inpval === revString) {
+                document.write(inpval + " is a Palindrome");
+            }
+            else 
+                document.write(inpval +" is not a Palindrome");
+            }              
+    </script>
+    <script>
+        var len = nums.length;
+        var swapped = true;
+        while (swapped) {
+            swapped = false;
+            for (let i = 0; i < len; i++) {
+                for (let j = 0; j < len; j++) {
+                    if (nums[j] > nums[j + 1]) {
+                        var temp = nums[j];
+                        nums[j] = nums[j + 1];
+                        nums[j + 1] = temp;
+                        swapped = true;
+                    }
+                }
+            }
+        }
+        console.log([2, 4, 1, 5, 8]);
+
+    </script>
+</body>
+</html>
