@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import SignUp from './SignUp/SignUp';
 import Person from './Person/Person';
 
 export default class App extends Component {
@@ -9,6 +10,9 @@ export default class App extends Component {
       Persons: [
         {name: "Priya", age: 29},
         {name: "Pravu", age: 26}
+      ],
+      Customers: [
+        {fname: '',lname: '' }
       ]
     }
   }
@@ -23,13 +27,35 @@ export default class App extends Component {
     })
   }
 
+  showNameHandler = (event) => {
+    this.setState({
+      Persons: [
+        {name: "Priya", age: 29},
+        {name: event.target.value, age: 50}
+      ]
+    })
+  }
+
+  submitInfoHandler = (event) =>{
+    this.setState({
+      Customers: [
+        {fname: event.target.value,lname:event.target.value }
+          
+      ]
+    })
+  }
+
   render() {
     return (
       <div className="App">
         <h1> My React App </h1>
-        <Person name = {this.state.Persons[0].name} age = {this.state.Persons[0].age} click = {this.changeNameHandler} />
-        <Person name = {this.state.Persons[1].name} age = {this.state.Persons[1].age} click = {this.changeNameHandler} />
+        <Person change = {this.showNameHandler} name = {this.state.Persons[0].name} age = {this.state.Persons[0].age} />
+        <Person name = {this.state.Persons[1].name} age = {this.state.Persons[1].age} change = {this.showNameHandler} />
+        
         <button onClick = {this.changeNameHandler}>Switch Name</button>
+        <SignUp change = {this.submitInfoHandler}/>
+       
+   
       </div>
     );
   }
