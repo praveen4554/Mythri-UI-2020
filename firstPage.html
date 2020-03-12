@@ -4,6 +4,20 @@
         <title>Mythri UI 2020 batch</title>
     </head>
     <body>
+
+<script>
+var person1 = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+var person2 = {
+  firstName:"John",
+  lastName: "Doe",
+}
+var x = person1.fullName.call(person2); 
+document.getElementById("demo").innerHTML = x; 
+</script>
         <div>Hello TO ALL</div>
         <div>Hello TO ALL1</div>
         <div>Hello TO ALL2</div>
