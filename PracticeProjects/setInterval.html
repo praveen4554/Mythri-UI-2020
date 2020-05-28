@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: azure;
+      }
+      #time {
+        text-align: center;
+        color: coral;
+        font-size: 200px;
+        padding: 10%;
+      }
+    </style>
+  </head>
+  <body onload="stopClock()">
+    <h2 id="time"></h2>
+  </body>
+  <script>
+    var sec = 60;
+
+    function stopClock() {
+      var date = new Date();
+
+      var interval = setInterval(function() {
+        newSec = sec--;
+
+        document.getElementById("time").innerHTML = "00:00:" + newSec;
+        if (newSec == 0) {
+          alert("The timer is completed");
+          clearInterval(interval);
+        }
+      }, 1000);
+    }
+  </script>
+</html>

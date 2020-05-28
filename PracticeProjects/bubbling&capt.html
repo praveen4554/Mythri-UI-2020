@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Bubbling and Capturing</title>
+    <style>
+        .container {
+            background-color: red;
+            padding: 30px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        .two {
+            background-color: teal;
+            padding: 30px;
+            margin: 20px;
+
+        }
+
+        .three {
+            background-color: yellow;
+            padding: 30px;
+            margin: 20px;
+        }
+
+        .four {
+            background-color: pink;
+            padding: 30px;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="container">
+        1
+        <div class="text-warning two" id="text1">
+            2
+            <div class="text-info three" id="text2">
+                3
+                <div class="text-info four" id="text3">
+                    4
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        document.getElementById("container").addEventListener('click', function () {
+            console.log('Clicked 1')
+            
+        })
+        document.getElementById("text1").addEventListener('click', function () {
+            console.log('Clicked 2') 
+            event.stopPropagation()//displays only clicked 2
+           
+        })
+        document.getElementById("text2").addEventListener('click', function () {
+            console.log('Clicked 3') 
+           event.stopImmediatePropagation()//displays only clicked 3
+        })
+        document.getElementById("text3").addEventListener('click', function () {
+            console.log('Clicked 4') 
+             
+        },true)
+
+     //Difference between stopProp and stopImmedProp
+            
+
+       
+    </script>
+</body>
+
+
+</html>

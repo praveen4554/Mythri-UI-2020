@@ -1,0 +1,78 @@
+body{
+    margin:0;
+}
+
+.gridCont{
+    display:grid;
+    grid-template-columns:10% 40% 30% auto auto;
+    grid-gap: 5px;
+    text-align:center;
+}
+
+.gridCont>div{
+    border: 1px solid inherit;
+    height: 200px;
+}
+
+.gridCont>div:nth-child(even){
+    background-color: coral;
+}
+.gridCont>div:nth-child(odd){
+    background-color: aquamarine;
+}
+
+.gridCont>div:nth-child(9n){
+    background-color: greenyellow;
+}
+
+.box9{
+    grid-row: 2;
+    grid-column:1/4 ;
+}
+
+.gridContIE{
+   display: -ms-grid;
+   display:grid;
+   -ms-grid-columns:auto auto;
+   grid-template-areas: "box2 box3"
+                        "box1 box4";
+    height: 100px;
+    grid-gap: 30px;
+    margin-top:50px;
+    text-align:center;
+    
+}
+
+.gridContIE>div:nth-child(even){
+    background-color: purple;
+}
+.gridContIE>div:nth-child(odd){
+    background-color: teal;
+}
+
+.box1e{
+    -ms-grid-row:1; 
+    -ms-grid-column:1; 
+    -ms-grid-column-span:2;
+    grid-area:box1;
+}
+
+.box2e{
+    -ms-grid-row:1; 
+    -ms-grid-column:2; 
+    -ms-grid-column-span:2;
+    grid-area:box2;
+
+}
+.box3e{
+    -ms-grid-row:2; 
+    -ms-grid-column:1; 
+    -ms-grid-column-span:2;
+    grid-area:box3;
+}
+.box4e{
+    -ms-grid-row:2; 
+    -ms-grid-column:2; 
+    -ms-grid-column-span:2;
+    grid-area:box4;
+}

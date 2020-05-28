@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listener</title>
+    <style>
+        .btn{
+            margin-top: 30px;
+            cursor:pointer;
+        }
+    </style>
+</head>
+<body id="load">
+    <div class="container"> 
+        <button class="btn btn-info" id="click">Click Me</button>
+        <button class="btn btn-info" id="dblclick">Double Click Me</button>
+        <p class="text-info" id="copy">Copy Me</p>
+        <button class="btn btn-info" id="mouseover">mouseover Me</button>
+        
+    </div>
+   
+    <script>
+        //1way 
+        
+        function click(){
+            alert("Event Listened")
+        }
+        document.getElementById("click").addEventListener('click',click)
+        
+        //2nd and preferred way
+
+        document.getElementById("dblclick").addEventListener('dblclick',function(){
+            document.write("Event Listened")
+        })
+        document.getElementById("copy").addEventListener('copy',function(){
+           alert("Text Copied")
+        })
+        document.getElementById("mouseover").addEventListener('mouseover',function(){
+           alert("Event Mouse Over")
+        })
+        function load(){
+            document.getElementById("copy").innerHTML = "loaded";
+        }
+        document.getElementById("load").addEventListener('load', load)
+
+
+    </script>
+</body>
+</html>
